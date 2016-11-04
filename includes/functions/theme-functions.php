@@ -435,9 +435,6 @@ function trestle_output_styles() {
 	'<style type="text/css">%s</style>',
 	implode( ' ', $styles )
 	);
-
-	error_log( print_r( $styles, true ) );
-
 }
 
 add_filter( 'genesis_pre_load_favicon', 'trestle_do_custom_favicon' );
