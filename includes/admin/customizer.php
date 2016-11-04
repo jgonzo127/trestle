@@ -1533,7 +1533,44 @@ function trestle_customizer_controls( $wp_customize ) {
 		)
 	);
 
-	// Primary nav extras.
+	// Disable Colors.
+	$wp_customize->add_setting(
+		'trestle-settings[disable_trestle_colors]',
+		array(
+			'default'    => trestle_get_option( 'disable_trestle_colors' ),
+			'type'       => 'option',
+			'capability' => 'edit_theme_options',
+		)
+	);
+	$wp_customize->add_control(
+		'trestle_colors_control',
+		array(
+			'section'   => 'trestle_settings_section',
+			'settings'  => 'trestle-settings[disable_trestle_colors]',
+			'label'     => __( 'Disable Trestle Customizer Colors?', 'trestle' ),
+			'type'      => 'checkbox',
+		)
+	);
+
+	// Disable Accessibility
+	$wp_customize->add_setting(
+		'trestle-settings[disable_trestle_accessiblity]',
+		array(
+			'default'    => trestle_get_option( 'disable_trestle_accessiblity' ),
+			'type'       => 'option',
+			'capability' => 'edit_theme_options',
+		)
+	);
+	$wp_customize->add_control(
+		'trestle_accessibility_control',
+		array(
+			'section'   => 'trestle_settings_section',
+			'settings'  => 'trestle-settings[disable_trestle_accessiblity]',
+			'label'     => __( 'Disable Trestle Accessiblity Enhancements?', 'trestle' ),
+			'type'      => 'checkbox',
+		)
+	);
+
 	$wp_customize->add_setting(
 		'trestle-settings[search_in_nav]',
 		array(
